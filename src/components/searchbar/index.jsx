@@ -2,7 +2,7 @@ import "./index.css";
 export default function Searchbar({  loading, weatherData,city, setWeatherData , handleSubmit , setCity }) {
 
     //const { name , main , weather , wind } = weatherData ;
-
+  
   return (
     <div>
     <div className="search-bar">
@@ -17,6 +17,14 @@ export default function Searchbar({  loading, weatherData,city, setWeatherData ,
       <div className="search-but"> 
       <button className="search-button" onClick={handleSubmit}>Search</button>
         </div>
+
+        {loading && (
+            <p className="loading-text">                
+            Loading data! Please wait ...
+            </p>
+        )}
+
+
       {weatherData && (
         <>
       
