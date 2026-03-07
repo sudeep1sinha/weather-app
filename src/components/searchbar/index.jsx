@@ -1,5 +1,18 @@
+import { get } from "mongoose";
 import "./index.css";
 export default function Searchbar({  loading, weatherData,city, setWeatherData , handleSubmit , setCity }) {
+
+
+    function getCurrentDate(){
+        return new Date().toLocaleDateString('en-us',
+            {
+                weekday : "long",
+                year : "numeric",
+                month : "long",
+                day : "numeric"
+            }
+        )
+    }
 
     //const { name , main , weather , wind } = weatherData ;
   
@@ -30,6 +43,7 @@ export default function Searchbar({  loading, weatherData,city, setWeatherData ,
       
 
       <div>
+        <span>{getCurrentDate()}</span>
         <p>Name : {weatherData.name} </p>    
         
         

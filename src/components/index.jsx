@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Searchbar from "./searchbar";
 import "./searchbar/index.css";
 import conf from "./searchbar/conf";
@@ -11,7 +11,7 @@ export default function WeatherApp(){
 
     const [weatherData , setWeatherData] = useState(null);
     const [loading , setLoading] = useState(false);
-    const [city , setCity] = useState("");
+    const [city , setCity] = useState("london");
 
     async function fetchWeatherData(){
         setLoading(true);
@@ -29,6 +29,13 @@ export default function WeatherApp(){
     function handleSubmit(){
         fetchWeatherData();
     }
+
+
+    useEffect(() => {
+        fetchWeatherData();
+    } , [])
+
+   
 
 
     return (
