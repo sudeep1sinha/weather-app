@@ -1,4 +1,4 @@
-import { get } from "mongoose";
+
 import "./index.css";
 export default function Searchbar({  loading, weatherData,city, setWeatherData , handleSubmit , setCity }) {
 
@@ -10,6 +10,7 @@ export default function Searchbar({  loading, weatherData,city, setWeatherData ,
                 year : "numeric",
                 month : "long",
                 day : "numeric"
+                
             }
         )
     }
